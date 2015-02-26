@@ -1,3 +1,5 @@
+<?php
+
 if (function_exists('runkit_function_redefine') && function_exists('xdebug_var_dump'))
 {
 	class DebugLogger {
@@ -34,4 +36,8 @@ if (function_exists('runkit_function_redefine') && function_exists('xdebug_var_d
 var_dump(123);
 var_dump('asdasdas');
 var_dump(new DateTime());
-DebugLogger::show();
+if (class_exists('DebugLogger')) 
+{
+	DebugLogger::show();	
+}
+
